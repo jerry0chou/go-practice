@@ -307,8 +307,8 @@ func DemonstrateTCPOperations() {
 	fmt.Println("  4. Error Handling and Recovery")
 
 	fmt.Println("\n💡 To test TCP operations:")
-	fmt.Println("  1. Start a server: go run run/net_main.go -mode=server")
-	fmt.Println("  2. Start a client: go run run/net_main.go -mode=client")
+	fmt.Println("  1. Start a server: go run run/net_main.go -mode=tcp-server")
+	fmt.Println("  2. Start a client: go run run/net_main.go -mode=tcp-client")
 	fmt.Println("  3. Start a chat server: go run run/net_main.go -mode=chat")
 
 	fmt.Println("\n🔧 Available Functions:")

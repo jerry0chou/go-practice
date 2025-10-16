@@ -42,7 +42,7 @@ func main() {
 		runMulticastServer(*address, *port)
 	default:
 		fmt.Printf("❌ Unknown mode: %s\n", *mode)
-		fmt.Println("Available modes: demo, url, network, tcp-server, tcp-client, udp-server, udp-client, chat, broadcast, multicast")
+		fmt.Println("Available modes: demo, url, network, tcp-server, tcp-client, udp-server, udp-client, client, chat, broadcast, multicast")
 		os.Exit(1)
 	}
 }
