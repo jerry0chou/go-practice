@@ -1,0 +1,51 @@
+[app]
+name = "production-app"
+version = "2.1.0"
+environment = "production"
+debug = false
+
+[server]
+host = "0.0.0.0"
+port = 3000
+read_timeout = "30s"
+write_timeout = "30s"
+idle_timeout = "60s"
+
+[database]
+url = "postgres://user:password@localhost:5432/production_db"
+max_connections = 25
+min_connections = 5
+connection_timeout = "10s"
+query_timeout = "5s"
+ssl_mode = "require"
+
+[logging]
+level = "info"
+format = "json"
+output = "file"
+filename = "/var/log/app.log"
+max_size = 100
+max_age = 30
+compress = true
+
+[features]
+enable_metrics = true
+enable_cors = true
+enable_cache = true
+enable_rate_limit = true
+
+[services.redis]
+url = "redis://localhost:6379/0"
+timeout = "5s"
+pool_size = 20
+
+[services.cache]
+ttl = "10m"
+max_size = 10000
+strategy = "lru"
+
+[security]
+jwt_secret = "your-super-secret-jwt-key-that-is-at-least-32-characters-long"
+session_secret = "your-super-secret-session-key-that-is-at-least-32-characters-long"
+token_expiry = "24h"
+bcrypt_cost = 14

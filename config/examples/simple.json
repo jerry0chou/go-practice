@@ -1,0 +1,41 @@
+{
+  "app": {
+    "name": "simple-app",
+    "version": "1.0.0",
+    "environment": "development",
+    "debug": true
+  },
+  "server": {
+    "host": "localhost",
+    "port": 8080
+  },
+  "database": {
+    "url": "postgres://localhost:5432/simple_db",
+    "max_connections": 10
+  },
+  "logging": {
+    "level": "info",
+    "format": "json"
+  },
+  "features": {
+    "enable_metrics": false,
+    "enable_cors": true,
+    "enable_cache": false,
+    "enable_rate_limit": false
+  },
+  "services": {
+    "redis": {
+      "url": "redis://localhost:6379",
+      "pool_size": 10
+    },
+    "cache": {
+      "max_size": 1000,
+      "strategy": "lru"
+    }
+  },
+  "security": {
+    "jwt_secret": "simple-jwt-secret-key-for-development-only",
+    "session_secret": "simple-session-secret-key-for-development-only",
+    "bcrypt_cost": 4
+  }
+}
